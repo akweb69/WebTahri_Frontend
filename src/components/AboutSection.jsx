@@ -2,17 +2,20 @@ import { motion } from 'framer-motion'
 import { HiOutlineUsers, HiOutlineGlobe, HiOutlineSparkles, HiOutlineHeart } from 'react-icons/hi'
 
 const stats = [
-  { label: 'Happy Customers', value: '12,000+', icon: HiOutlineUsers },
-  { label: 'Products Sold', value: '50,000+', icon: HiOutlineSparkles },
-  { label: 'Countries Reached', value: '120+', icon: HiOutlineGlobe },
+  { label: 'Happy Customers', value: '120+', icon: HiOutlineUsers },
+  { label: 'Projects Sold', value: '500+', icon: HiOutlineSparkles },
+  { label: 'Countries Reached', value: '10+', icon: HiOutlineGlobe },
   { label: 'Satisfaction Rate', value: '99%', icon: HiOutlineHeart },
 ]
 
 const team = [
-  { name: 'Alex Thompson', role: 'Founder & CEO', initial: 'AT' },
-  { name: 'Sarah Chen', role: 'Lead Designer', initial: 'SC' },
-  { name: 'Michael Roberts', role: 'Senior Developer', initial: 'MR' },
-  { name: 'Emily Davis', role: 'Customer Success', initial: 'ED' },
+  { name: 'Abu Kalam', role: 'Founder & CEO', initial: 'AK', image: "https://i.ibb.co/sJNBbnWg/j-kkkkkkk.jpg" },
+  { name: 'Tahrima Akter', role: 'Lead Designer', initial: 'TA', image: "https://i.ibb.co/vvfZmH4d/6280629156705931570.jpg" },
+  { name: 'Salman Farshi', role: 'Senior Developer', initial: 'SF', image: "https://i.ibb.co/twYWxfm1/PSFix-20230512-172155-02-01-copy-300x300.jpg" },
+  { name: 'Mashruf ', role: 'Senior Developer', initial: 'MS', image: "https://i.ibb.co/LdHN2ZV2/Whats-App-Image-2025-08-23-at-20-52-35-4fc06ef7.jpg" },
+  { name: 'Abdur Razzaq', role: 'Developer', initial: 'AR' },
+  { name: 'Rehena Akhter', role: 'Developer', initial: 'RA', image: "https://i.ibb.co/Xxqdn2yJ/IMG-2439.jpg" },
+  { name: 'Abdur Rashid', role: 'Customer Success', initial: 'AR', image: "https://i.ibb.co/MDjRPqPR/b0c03e38-e0f1-4275-9e90-4c8b3d979468.jpg" },
 ]
 
 export default function AboutSection() {
@@ -33,8 +36,8 @@ export default function AboutSection() {
             Building the Future of Digital Products
           </h2>
           <p className="text-muted-foreground text-lg max-w-3xl mx-auto leading-relaxed">
-            {"We're"} a passionate team of designers and developers dedicated to creating premium digital products 
-            that help businesses and developers build faster and better. Our mission is to democratize access 
+            {"We're"} a passionate team of designers and developers dedicated to creating premium digital products
+            that help businesses and developers build faster and better. Our mission is to democratize access
             to high-quality web development resources.
           </p>
         </motion.div>
@@ -74,17 +77,17 @@ export default function AboutSection() {
             <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-6">Our Story</h3>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                CodeCraft was founded in 2020 with a simple goal: to create digital products that developers 
-                actually want to use. We noticed that most templates and UI kits on the market were either 
+                CodeCraft was founded in 2020 with a simple goal: to create digital products that developers
+                actually want to use. We noticed that most templates and UI kits on the market were either
                 outdated, poorly coded, or lacked proper documentation.
               </p>
               <p>
-                We set out to change that by building products with the same attention to detail and quality 
-                that we would want in our own projects. Every template, every component, and every line of 
+                We set out to change that by building products with the same attention to detail and quality
+                that we would want in our own projects. Every template, every component, and every line of
                 code is crafted with care.
               </p>
               <p>
-                Today, {"we're"} proud to serve over 12,000 customers worldwide, from solo developers to 
+                Today, {"we're"} proud to serve over 12,000 customers worldwide, from solo developers to
                 Fortune 500 companies. But {"we're"} just getting started.
               </p>
             </div>
@@ -134,7 +137,11 @@ export default function AboutSection() {
                 className="bg-card rounded-2xl border border-border p-6 text-center hover:border-primary/50 transition-colors"
               >
                 <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-xl font-bold text-primary">{member.initial}</span>
+                  {
+                    member.image
+                      ? <img src={member.image} alt="" className="w-full h-full object-cover rounded-full" />
+                      : <span className="text-xl font-bold text-primary">{member.initial}</span>
+                  }
                 </div>
                 <div className="font-semibold text-foreground mb-1">{member.name}</div>
                 <div className="text-sm text-muted-foreground">{member.role}</div>
