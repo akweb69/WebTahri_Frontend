@@ -35,7 +35,7 @@ export default function CustomOrder() {
               Need a Custom Website Design?
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-              {"Can't"} find exactly what you need? Let our team of expert designers and developers 
+              {"Can't"} find exactly what you need? Let our team of expert designers and developers
               create a custom solution tailored specifically to your business requirements.
             </p>
 
@@ -77,11 +77,11 @@ export default function CustomOrder() {
             <div className="bg-card rounded-3xl border border-border p-8 lg:p-10 relative overflow-hidden">
               {/* Decorative Element */}
               <div className="absolute top-0 right-0 w-40 h-40 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-              
+
               <div className="relative">
                 <div className="text-sm text-primary font-medium mb-2">Starting from</div>
                 <div className="flex items-baseline gap-2 mb-6">
-                  <span className="text-5xl font-bold text-foreground">$499</span>
+                  <span className="text-5xl font-bold text-foreground">$99</span>
                   <span className="text-muted-foreground">/project</span>
                 </div>
 

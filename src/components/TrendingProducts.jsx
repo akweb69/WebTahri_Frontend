@@ -71,7 +71,7 @@ const itemVariants = {
 
 export default function TrendingProducts() {
   return (
-    <section className="py-20 lg:py-28">
+    <section className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -84,7 +84,7 @@ export default function TrendingProducts() {
             Trending Now
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4 text-balance">
-            Popular Digital Products
+            Popular Landing Pages
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Discover our most popular templates and code bundles loved by thousands of developers
@@ -128,7 +128,7 @@ export default function TrendingProducts() {
                 <h3 className="font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
                   {product.name}
                 </h3>
-                
+
                 {/* Tags */}
                 <div className="flex flex-wrap gap-1.5 mb-3">
                   {product.tags.map((tag) => (
