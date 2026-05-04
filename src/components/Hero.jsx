@@ -23,7 +23,7 @@ export default function Hero() {
             className="text-center lg:text-left"
           >
             {/* Badge */}
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
@@ -31,7 +31,7 @@ export default function Hero() {
             >
               <HiOutlineSparkles className="w-4 h-4" />
               <span>New: Premium Templates Released</span>
-            </motion.div>
+            </motion.div> */}
 
             {/* Headline */}
             <motion.h1
@@ -47,7 +47,7 @@ export default function Hero() {
                   <path d="M2 10C50 2 150 2 198 10" stroke="currentColor" strokeWidth="3" strokeLinecap="round" className="text-primary/40" />
                 </svg>
               </span>{' '}
-              Digital Products
+              Websites & Landing Pages
             </motion.h1>
 
             {/* Description */}
@@ -57,8 +57,8 @@ export default function Hero() {
               transition={{ delay: 0.4 }}
               className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0"
             >
-              Discover professionally crafted website templates, landing pages, and source code. 
-              Launch your projects faster with our production-ready digital products.
+              Discover professionally crafted website templates, landing pages, and source code.
+              Launch your projects faster with our production-readyWebsite & Landing Pages.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -89,8 +89,8 @@ export default function Hero() {
               className="grid grid-cols-3 gap-8 mt-12 pt-8 border-t border-border"
             >
               {[
-                { value: '500+', label: 'Templates' },
-                { value: '12K+', label: 'Happy Customers' },
+                { value: '50+', label: 'Templates' },
+                { value: '600+', label: 'Happy Customers' },
                 { value: '99%', label: 'Satisfaction' },
               ].map((stat) => (
                 <div key={stat.label} className="text-center lg:text-left">
@@ -106,9 +106,9 @@ export default function Hero() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="relative hidden lg:block"
+            className="relative "
           >
-            <div className="relative">
+            <div className="hidden">
               {/* Main Card */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -175,6 +175,9 @@ export default function Hero() {
                 </div>
               </motion.div>
             </div>
+
+            <img className='w-full object-cover' src="https://i.ibb.co/hPVXGqM/vecteezy-add-to-cart-button-on-laptop-51683903.png" alt="" />
+            {/* <img className='w-full object-cover' src="https://i.ibb.co/MDKytkgf/vecteezy-money-bag-with-gold-coins-3d-illustration-76611222.png" alt="" /> */}
           </motion.div>
         </div>
       </div>
