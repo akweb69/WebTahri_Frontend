@@ -1,0 +1,79 @@
+/* src/components/Loader.css */
+
+/* ---------- Full‑screen overlay ----------
+   Dark with a backdrop‑blur effect */
+.loader-overlay {
+  position: fixed;
+  inset: 0; /* top, right, bottom, left = 0 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999; /* on top of everything */
+}
+
+/* ---------- Center container ----------
+   Holds rings, icon and brand text */
+.loader-center {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+/* ---------- Rings ----------
+   Three concentric circles with only their top edge coloured.
+   Different sizes + opposite spin directions give depth. */
+.loader-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 4px solid transparent;
+  box-sizing: border-box;
+}
+
+/* Outermost ring */
+.ring-1 {
+  width: 200px;
+  height: 200px;
+  border-top-color: #61dbfb; /* React cyan */
+}
+
+/* Middle ring */
+.ring-2 {
+  width: 150px;
+  height: 150px;
+  left: 25px;
+  top: 25px;
+  border-top-color: #ffcf00; /* Sunny yellow */
+}
+
+/* Innermost ring */
+.ring-3 {
+  width: 100px;
+  height: 100px;
+  left: 50px;
+  top: 50px;
+  border-top-color: #ff5f5f; /* Soft red */
+}
+
+/* ---------- Central icon ----------
+   The React (or any chosen) icon sits in the middle */
+.loader-icon {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------- Brand name ----------
+   Appears just below the rings, smoothly fades in */
+.loader-brand {
+  position: absolute;
+  left: 50%;
+  bottom: -2.5rem; /* distance from the bottom of the circles */
+  transform: translateX(-50%);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  white-space: nowrap;
+  /* colour & size are injected via inline style from the component */
+}

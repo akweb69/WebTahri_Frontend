@@ -20,7 +20,7 @@ const team = [
 
 export default function AboutSection() {
   return (
-    <section className="py-20 lg:py-28">
+    <section className="py-20  ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -77,7 +77,7 @@ export default function AboutSection() {
             <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-6">Our Story</h3>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                CodeCraft was founded in 2020 with a simple goal: to create digital products that developers
+                WebTahri was founded in 2020 with a simple goal: to create digital products that developers
                 actually want to use. We noticed that most templates and UI kits on the market were either
                 outdated, poorly coded, or lacked proper documentation.
               </p>

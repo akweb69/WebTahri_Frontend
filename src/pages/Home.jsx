@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion'
 import Hero from '../components/Hero'
 import TrendingProducts from '../components/TrendingProducts'
-import ProductsGrid from '../components/ProductsGrid'
 import CustomOrder from '../components/CustomOrder'
 import WhyChooseUs from '../components/WhyChooseUs'
 import Newsletter from '../components/Newsletter'
@@ -9,6 +8,7 @@ import Consultation from '../components/Consultation'
 import ContactSection from '../components/ContactSection'
 import FAQ from '../components/FAQ'
 import AboutSection from '../components/AboutSection'
+import AllProducts from '../components/AllProducts'
 
 const pageVariants = {
   initial: { opacity: 0 },
@@ -27,7 +27,7 @@ export default function Home() {
     >
       <Hero />
       <TrendingProducts />
-      <ProductsGrid />
+      <AllProducts />
       <CustomOrder />
       <AboutSection />
       <WhyChooseUs />

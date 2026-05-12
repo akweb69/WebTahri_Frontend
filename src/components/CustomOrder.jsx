@@ -13,7 +13,7 @@ const features = [
 
 export default function CustomOrder() {
   return (
-    <section className="py-20 lg:py-28 relative overflow-hidden">
+    <section className="py-20  lg:py-28 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background" />
@@ -59,7 +59,7 @@ export default function CustomOrder() {
             </div>
 
             <Link
-              to="/contact"
+              to="/custom_build_request"
               className="inline-flex items-center gap-2 px-6 py-3.5 bg-primary text-primary-foreground font-medium rounded-xl hover:bg-primary/90 transition-all hover:shadow-lg hover:shadow-primary/25 group"
             >
               Place Custom Order
@@ -103,7 +103,7 @@ export default function CustomOrder() {
                 </div>
 
                 <Link
-                  to="/contact"
+                  to="/consultant"
                   className="w-full inline-flex items-center justify-center gap-2 px-6 py-4 bg-primary text-primary-foreground font-medium rounded-xl hover:bg-primary/90 transition-all group"
                 >
                   Get Free Consultation

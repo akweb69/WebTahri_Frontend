@@ -36,7 +36,7 @@ export default function Products() {
     .filter((product) => {
       const matchesCategory = activeCategory === 'All' || product.category === activeCategory
       const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                           product.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()))
+        product.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()))
       return matchesCategory && matchesSearch
     })
     .sort((a, b) => {
@@ -107,17 +107,15 @@ export default function Products() {
               <div className="flex items-center bg-background border border-border rounded-xl p-1">
                 <button
                   onClick={() => setViewMode('grid')}
-                  className={`p-2 rounded-lg transition-colors ${
-                    viewMode === 'grid' ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground'
-                  }`}
+                  className={`p-2 rounded-lg transition-colors ${viewMode === 'grid' ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground'
+                    }`}
                 >
                   <FiGrid className="w-5 h-5" />
                 </button>
                 <button
                   onClick={() => setViewMode('list')}
-                  className={`p-2 rounded-lg transition-colors ${
-                    viewMode === 'list' ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground'
-                  }`}
+                  className={`p-2 rounded-lg transition-colors ${viewMode === 'list' ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground'
+                    }`}
                 >
                   <FiList className="w-5 h-5" />
                 </button>
@@ -131,11 +129,10 @@ export default function Products() {
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                  activeCategory === category
-                    ? 'bg-primary text-primary-foreground'
-                    : 'bg-secondary text-secondary-foreground hover:bg-secondary/80'
-                }`}
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${activeCategory === category
+                  ? 'bg-primary text-primary-foreground'
+                  : 'bg-secondary text-secondary-foreground hover:bg-secondary/80'
+                  }`}
               >
                 {category}
               </button>
@@ -163,9 +160,8 @@ export default function Products() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: index * 0.05 }}
               whileHover={{ y: viewMode === 'grid' ? -5 : 0 }}
-              className={`group bg-card rounded-2xl border border-border overflow-hidden hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/5 ${
-                viewMode === 'list' ? 'flex' : ''
-              }`}
+              className={`group bg-card rounded-2xl border border-border overflow-hidden hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/5 ${viewMode === 'list' ? 'flex' : ''
+                }`}
             >
               {/* Product Image */}
               <div className={`bg-secondary relative overflow-hidden ${viewMode === 'list' ? 'w-48 flex-shrink-0' : 'aspect-[4/3]'}`}>
@@ -189,7 +185,7 @@ export default function Products() {
                 <h3 className="font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
                   {product.name}
                 </h3>
-                
+
                 {/* Tags */}
                 <div className="flex flex-wrap gap-1.5 mb-3">
                   {product.tags.map((tag) => (

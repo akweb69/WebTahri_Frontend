@@ -1,25 +1,36 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import toast from 'react-hot-toast'
-import { FiUser, FiMail, FiMessageSquare, FiSend, FiMapPin, FiPhone, FiClock } from 'react-icons/fi'
+import axios from 'axios'
+import {
+  FiUser,
+  FiMail,
+  FiMessageSquare,
+  FiSend,
+  FiMapPin,
+  FiPhone,
+  FiClock,
+  FiCheckCircle,
+  FiAlertCircle
+} from 'react-icons/fi'
 
 const contactInfo = [
   {
     icon: FiMail,
     title: 'Email Us',
-    details: 'hello@codecraft.dev',
+    details: 'akwebdev69@gmail.com',
     subtitle: 'We reply within 24 hours',
   },
   {
     icon: FiPhone,
     title: 'Call Us',
-    details: '+1 (234) 567-890',
-    subtitle: 'Mon-Fri 9am-6pm EST',
+    details: '+880 1768037870',
+    subtitle: '24/7 Available',
   },
   {
     icon: FiMapPin,
     title: 'Visit Us',
-    details: 'San Francisco, CA',
+    details: 'Dhaka, Bangladesh',
     subtitle: 'By appointment only',
   },
   {
@@ -39,6 +50,9 @@ export default function ContactSection() {
   })
   const [isLoading, setIsLoading] = useState(false)
 
+  // Environment variable for your API URL
+  const base_url = import.meta.env.VITE_BASE_URL || 'http://localhost:5000'
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
@@ -46,14 +60,31 @@ export default function ContactSection() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     setIsLoading(true)
-    await new Promise((resolve) => setTimeout(resolve, 1500))
-    toast.success('Message sent successfully! We\'ll get back to you soon.')
-    setFormData({ name: '', email: '', subject: '', message: '' })
-    setIsLoading(false)
+
+    try {
+      // Axios POST request to your /massage endpoint
+      const response = await axios.post(`${base_url}/massage`, formData)
+
+      if (response.data.insertedId || response.status === 200) {
+        toast.success('Message sent successfully! We\'ll get back to you soon.', {
+          icon: <FiCheckCircle className="text-green-500" />,
+          duration: 4000,
+        })
+        // Reset form on success
+        setFormData({ name: '', email: '', subject: '', message: '' })
+      }
+    } catch (error) {
+      console.error('Submission Error:', error)
+      toast.error(error.response?.data?.message || 'Failed to send message. Please try again.', {
+        icon: <FiAlertCircle className="text-red-500" />,
+      })
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   return (
-    <section className="py-20 lg:py-28 bg-card/50">
+    <section className="py-20 bg-card/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -88,11 +119,11 @@ export default function ContactSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="p-5 bg-card rounded-2xl border border-border hover:border-primary/50 transition-colors"
+                className="p-5 bg-card rounded-2xl border border-border hover:border-primary/50 transition-colors group"
               >
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <info.icon className="w-5 h-5 text-primary" />
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
+                    <info.icon className="w-5 h-5 text-primary group-hover:text-white" />
                   </div>
                   <div>
                     <div className="text-sm text-muted-foreground mb-1">{info.title}</div>
@@ -113,7 +144,7 @@ export default function ContactSection() {
           >
             <form
               onSubmit={handleSubmit}
-              className="bg-card rounded-3xl border border-border p-8"
+              className="bg-card rounded-3xl border border-border p-8 shadow-sm"
             >
               <div className="grid sm:grid-cols-2 gap-5">
                 {/* Name */}
@@ -128,8 +159,8 @@ export default function ContactSection() {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      placeholder="John Doe"
-                      className="w-full pl-12 pr-4 py-3.5 bg-background border border-border rounded-xl text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all"
+                      placeholder="Your Name"
+                      className="w-full pl-12 pr-4 py-3.5 bg-background border border-border rounded-xl text-foreground focus:ring-2 focus:ring-primary/50 outline-none transition-all"
                       required
                     />
                   </div>
@@ -147,8 +178,8 @@ export default function ContactSection() {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      placeholder="john@example.com"
-                      className="w-full pl-12 pr-4 py-3.5 bg-background border border-border rounded-xl text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all"
+                      placeholder="name@example.com"
+                      className="w-full pl-12 pr-4 py-3.5 bg-background border border-border rounded-xl text-foreground focus:ring-2 focus:ring-primary/50 outline-none transition-all"
                       required
                     />
                   </div>
@@ -165,7 +196,7 @@ export default function ContactSection() {
                     value={formData.subject}
                     onChange={handleChange}
                     placeholder="How can we help you?"
-                    className="w-full px-4 py-3.5 bg-background border border-border rounded-xl text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all"
+                    className="w-full px-4 py-3.5 bg-background border border-border rounded-xl text-foreground focus:ring-2 focus:ring-primary/50 outline-none transition-all"
                     required
                   />
                 </div>
@@ -183,7 +214,7 @@ export default function ContactSection() {
                       onChange={handleChange}
                       placeholder="Tell us more about your inquiry..."
                       rows={5}
-                      className="w-full pl-12 pr-4 py-3.5 bg-background border border-border rounded-xl text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all resize-none"
+                      className="w-full pl-12 pr-4 py-3.5 bg-background border border-border rounded-xl text-foreground focus:ring-2 focus:ring-primary/50 outline-none transition-all resize-none"
                       required
                     />
                   </div>
@@ -196,7 +227,7 @@ export default function ContactSection() {
                     whileTap={{ scale: 0.99 }}
                     type="submit"
                     disabled={isLoading}
-                    className="w-full py-4 bg-primary text-primary-foreground font-medium rounded-xl hover:bg-primary/90 transition-all disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                    className="w-full py-4 bg-primary text-primary-foreground font-medium rounded-xl hover:opacity-90 transition-all disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2 shadow-lg shadow-primary/20"
                   >
                     {isLoading ? (
                       <div className="w-5 h-5 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin" />

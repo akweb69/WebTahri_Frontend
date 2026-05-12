@@ -20,7 +20,7 @@ export default function Newsletter() {
   }
 
   return (
-    <section className="py-20 lg:py-28 relative overflow-hidden">
+    <section className="py-20   relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-transparent to-accent/10" />

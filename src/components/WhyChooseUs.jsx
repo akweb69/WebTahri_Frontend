@@ -49,7 +49,7 @@ const itemVariants = {
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-20 lg:py-28 bg-card/50">
+    <section className="py-20   bg-card/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -59,7 +59,7 @@ export default function WhyChooseUs() {
           className="text-center mb-12 lg:mb-16"
         >
           <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-            Why CodeCraft
+            Why WebTahri
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4 text-balance">
             Why Choose Us?

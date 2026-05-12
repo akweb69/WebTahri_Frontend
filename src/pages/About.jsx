@@ -26,7 +26,7 @@ export default function About() {
           animate={{ opacity: 1, y: 0 }}
         >
           <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
-            About CodeCraft
+            About WebTahri
           </h1>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             {"We're"} on a mission to help developers and businesses build better digital products, faster.

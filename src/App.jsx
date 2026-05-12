@@ -7,6 +7,12 @@ import Home from './pages/Home'
 import Products from './pages/Products'
 import Contact from './pages/Contact'
 import About from './pages/About'
+import CustomOrder from './components/CustomOrder'
+import Loader from './components/Loader'
+import LandingPage from './components/LandingPage'
+import Website from './components/Website'
+import Consultation from './components/Consultation'
+import CustomBuildRequest from './components/CustomBuildRequest'
 
 function App() {
   const location = useLocation()
@@ -37,6 +43,12 @@ function App() {
           <Route path="/products" element={<Products />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
+          <Route path="/custom_build" element={<CustomOrder />} />
+          <Route path="/website" element={<Website />} />
+          <Route path="/landing_page" element={<LandingPage />} />
+          <Route path="/consultant" element={<Consultation />} />
+          <Route path="/custom_build_request" element={<CustomBuildRequest />} />
+          <Route path="/loader" element={<Loader />} />
         </Routes>
       </AnimatePresence>
       <Footer />
